@@ -4,9 +4,10 @@
 //This link executes an array of 5 images
 //https://api.nasa.gov/planetary/apod?api_key=uHvPZVEr3rkpFfv76yoNrgZRaTdKeLNUEjnT7joe&count=5;
 
+
 var spaceImage = [];
 
-var nasaAPI = "https://api.nasa.gov/planetary/apod?api_key=uHvPZVEr3rkpFfv76yoNrgZRaTdKeLNUEjnT7joe&count=5";
+var nasaAPI = "https://api.nasa.gov/planetary/apod?api_key=uHvPZVEr3rkpFfv76yoNrgZRaTdKeLNUEjnT7joe&count=10";
 
 fetch(nasaAPI).then(function(response) {
     if (response.status !== 200) {
