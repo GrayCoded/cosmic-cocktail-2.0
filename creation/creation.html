@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Cocktail Creator</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 id="creation"></h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+                <form id="selections">
+                    <label for="name-input">Creation Name</label>
+                    <input type="text" id="name-input" placeholder="Let's start with a name" name="name-input"></textarea>
+                    <label for="zodiac-select">Zodiac Sign</label>
+                    <select id="zodiac-select">
+                        <option>Aries</option>
+                        <option>Taurus</option>
+                        <option>Gemini</option>
+                        <option>Cancer</option>
+                        <option>Leo</option>
+                        <option>Virgo</option>
+                        <option>Libra</option>
+                        <option>Scorpius</option>
+                        <option>Sagitarius</option>
+                        <option>Capircornus</option>
+                        <option>Aquarius</option>
+                        <option>Pisces</option>
+                    </select>
+                    <label for="ing-select"></label>
+                    <select id="ing-select">
+                        <option>Vodka</option>
+                        <option>gin</option>
+                        <option>rum</option>
+                        <option>brandy</option>
+                        <option>wine</option>
+                        <option>scotch</option>
+                        <option>whiskey</option>
+                        <option>tequila</option>
+                        <option>liquers</option>
+                    </select>
+                </form>
+        </div>
+        <div class="card">
+            <div>
+                <form id="user-selections">
+                    <input id="created-name" placeholder="The Creration"/>
+                    <input id="zodiac-selected" placeholder="Astrological forcast"/>
+                    <input id="ingr-selected" placeholder="Feature Component"/>
+                </form>
+            <div>
+                <button type="submit" class="btn btn-primary"></button>
+            </div>
+        </div>
+    </div>
+        <!--JQuery Script-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--NASA photos script-->
+<script src="./assets/space.js"></script>
+<!--Cocktail Generator script-->
+<script src="./assets/cocktail.js"></script>
+</body>
+</html>
