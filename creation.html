@@ -1,70 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cosmic Cocktail 2.0</title>
-    <link rel="stylesheet" href="./assets/style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="./creation/creation.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
     <header>
-        <h1 id="creation"></h1>
+      <div>
+        <h1 id="creation">Cosmic Cocktail Creation</h1>
+      </div>
+      <div>
+        <p>
+          Welcome to the Cosmic Creation Engine! Here is where we make your
+          cocktail with a mix of astrology and spirits.
+        </p>
+      </div>
     </header>
     <div class="container">
-        <div class="card">
-                <form id="selections">
-                    <label for="name-input">Creation Name</label>
-                    <input type="text" id="name-input" placeholder="Let's start with a name" name="name-input"></textarea>
-                    <label for="zodiac-select">Zodiac Sign</label>
-                    <select id="zodiac-select">
-                        <option>Aries</option>
-                        <option>Taurus</option>
-                        <option>Gemini</option>
-                        <option>Cancer</option>
-                        <option>Leo</option>
-                        <option>Virgo</option>
-                        <option>Libra</option>
-                        <option>Scorpius</option>
-                        <option>Sagitarius</option>
-                        <option>Capircornus</option>
-                        <option>Aquarius</option>
-                        <option>Pisces</option>
-                    </select>
-                    <label for="ing-select"></label>
-                    <select id="ing-select">
-                        <option>Vodka</option>
-                        <option>gin</option>
-                        <option>rum</option>
-                        <option>brandy</option>
-                        <option>wine</option>
-                        <option>scotch</option>
-                        <option>whiskey</option>
-                        <option>tequila</option>
-                        <option>liquers</option>
-                    </select>
-                </form>
+      <div class="card-1 col-6">
+        <div>
+          <div>
+            <label class="title" for="name-input">Creation Name</label>
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+              id="name-input"
+              placeholder="Let's start with a name"
+            />
+            <button type="submit" class="btn btn-secondary submitBtn">
+              Confirm
+            </button>
+          </div>
         </div>
-        <div class="card">
-            <div>
-                <form id="user-selections">
-                    <input id="created-name" placeholder="The Creration"/>
-                    <input id="zodiac-selected" placeholder="Astrological forcast"/>
-                    <input id="ingr-selected" placeholder="Feature Component"/>
-                </form>
-            <div>
-                <button type="submit" class="btn btn-primary"></button>
-            </div>
+
+        <div>
+          <div>
+            <label class="title" for="zodiac-select">Zodiac Sign</label>
+          </div>
+          <div class="col-6">
+            <select id="zodiac-select">
+              <option>Select Zodiac</option>
+              <option>Aries</option>
+              <option>Taurus</option>
+              <option>Gemini</option>
+              <option>Cancer</option>
+              <option>Leo</option>
+              <option>Virgo</option>
+              <option>Libra</option>
+              <option>Scorpius</option>
+              <option>Sagitarius</option>
+              <option>Capircornus</option>
+              <option>Aquarius</option>
+              <option>Pisces</option>
+            </select>
+            <button type="submit" class="btn btn-secondary submitBtn">
+              Confirm
+            </button>
+          </div>
         </div>
+        <div>
+          <div>
+            <label class="title" for="ing-select">Spirit Selection</label>
+          </div>
+          <div class="col-6">
+            <select id="ing-select">
+              <option>Select Spirit</option>
+              <option>Vodka</option>
+              <option>Gin</option>
+              <option>Rum</option>
+              <option>Brandy</option>
+              <option>Wine</option>
+              <option>Scotch</option>
+              <option>Whiskey</option>
+              <option>Tequila</option>
+              <option>Liquers</option>
+            </select>
+            <button type="submit" class="btn btn-secondary submitBtn">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-2 col-6">
+        <div>
+          <input id="created-name" placeholder="The Creation" />
+          <button type="clear" class="btn btn-danger removeBtn">Remove</button>
+        </div>
+        <div>
+          <input id="zodiac-selected" placeholder="Astrological forcast" />
+          <button type="clear" class="btn btn-danger removeBtn">Remove</button>
+        </div>
+        <div>
+          <div class="list">
+            <input id="ingr-selected" placeholder="Feature Component" />
+          </div>
+          <button type="clear" class="btn btn-danger removeBtn">Remove</button>
+        </div>
+      </div>
     </div>
-                <!--JQuery Script-->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <!--NASA photos script-->
-        <script src="./assets/space.js"></script>
-        <!--Cocktail Generator script-->
-        <script src="./assets/cocktail.js"></script>
-</body>
+    <div class="text-center bottom">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <!--JQuery Script-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--NASA photos script-->
+    <script src="./assets/space.js"></script>
+    <!--Cocktail Generator script-->
+    <script src="./assets/cocktail.js"></script>
+  </body>
 </html>
