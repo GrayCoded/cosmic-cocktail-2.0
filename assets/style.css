@@ -3,21 +3,45 @@
     color: white;
 }
 
-body {
-    background-image: url(images/background1.jpg);
-    background-size: fit-content;
+html, body {
+    height: 100%;
 }
 
-/* .pickZod {
-    margin-left: 20%;
-} */
+body {
+    background-image: url(images/sunAndEarth.gif);
+    background-position: center;
+}
+
+header {
+    margin-top: 1vh;
+}
+
+header button:nth-child(1) {
+    margin-right: 10px;
+}
+
+#quote {
+    display: flex;
+    text-align: center;
+}
+
+.navbar {
+    width: min-content;
+}
+
+header h1 {
+    font-size: 60px;
+    text-shadow: 1px 5px rgb(203, 203, 56);
+    animation: glowing 2s;
+    border-radius: 20%;
+}
+
+header h3 {
+    width: min-content;
+}
 
 .container {
-    margin-top: 8%;
-}
-
-.container img {
-    transform: scale(1.3);
+    margin-top: 30%;
 }
 
 .sun-desc {
@@ -28,75 +52,75 @@ body {
     display: none;
 }
 
-#cntr-img {
+.zodiacs {
+    width: 80vw;
+    margin-top: 5%;
+    margin-bottom: 3%;
     display: flex;
-    position: relative;
-    justify-content: center;
+    animation: glowing 4s;
+    animation-delay: 1.5s;
+    border-radius: 20%;
+}
+
+.zodiac-img img {
     width: 100%;
 }
 
-.zodiacs {
-    position: absolute;
-    top: 32%;
-    left: 15.5%;
-    
-}
-
 .zodiac-img {
-    position: absolute;
-    width: 50%;
+    margin-left: 1%;
+    margin-right: 1%;
+    transition: transform ease-in-out 0.5s, border-radius ease-in-out 0.3s;
 }
 
-.zodiac-img:nth-child(1) {
-    transform: rotate(30deg) translateY(-100%);
+.zodiac-img:hover {
+    transform: scale(1.3);
+    outline: ridge 2px rgba(255, 230, 0, 0.636);
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 5px #fbff0095;
+}
+
+footer {
+    font-size: 20px;
+}
+
+@keyframes glowing {
+    0% { box-shadow: inset 3000px 0 5px #fbff00; }
+    50% { box-shadow: inset 0 0 20px #e2ed6c; }
+    100% { box-shadow: inset 0 0 1px #fff; }
+}
+
+
+@media (max-width: 991px) {
+    header h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
     
-}
-
-.zodiac-img:nth-child(2) {
-    transform: rotate(60deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(3) {
-    transform: rotate(90deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(4) {
-    transform: rotate(120deg) translateY(-100%); 
-}
-
-.zodiac-img:nth-child(5) {
-    transform: rotate(150deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(6) {
-    transform: rotate(180deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(7) {
-    transform: rotate(210deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(8) {
-    transform: rotate(240deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(9) {
-    transform: rotate(270deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(10) {
-    transform: rotate(300deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(11) {
-    transform: rotate(330deg) translateY(-100%);
-}
-
-.zodiac-img:nth-child(12) {
-    transform: rotate(360deg) translateY(-100%);
-}
-
-.zodiac-img img{
-    display: flex;
-    width: 8%;  
+    header h1, header h3 {
+        text-align: center;
+        width: auto;
+        margin: 10px 0;
+    }
+    
+    .container {
+        margin-top: 10%;
+    }
+    
+    .zodiacs {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 3%;
+    }
+    
+    .zodiac-img {
+        margin: 5px;
+        width: 0%;
+    }
 }
