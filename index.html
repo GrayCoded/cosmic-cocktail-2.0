@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Coctail 2.0</title>
+    <title>Cosmic Cocktail 2.0</title>
     <link rel="stylesheet" type="text/css" href="./assets/reset.css">
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,24 +14,23 @@
      <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="top-bar d-flex flex-row justify-content-center align-items-center>
-        <nav>
-            <ul>
-                <li><a href="">Galactic Shelf</a></li>
-                <li><a href="">Big Bangers</a></li>
-            </ul>
-        </nav>
-        <h1 class="ms-5">Pick your zodiac</h1>
-        <div id="sub-header">"These drinks are <i>out of this world!</i>"</div>
+    <header class="d-flex align-items-center justify-content-around m-3">
+        <nav class="navbar d-flex col-lg-3">
+            <form class="form-inline">
+              <button class="btn btn-lg btn-outline-warning" type="button">Galatic Shelf</button>
+              <button class="btn btn-lg btn-outline-warning" type="button">Big Bangers</button>
+            </form>
+          </nav>
+        <h1 class="text-center col-lg-4">PICK YOUR ZODIAC</h1>
+        <h3 class="text-center col-lg-3">"These drinks are out of this world!"</h3>
     </header>
-
-    <div class="container">
+  <main class="container col-sm-12">
+    <div class="d-flex flex-column align-items-center justify-content-center">
         <div >
-            <div id="cntr-img">
-                <a><img src="assets\images\rotatingSun.gif"></a>
+            <div>
                 <p class="sun-desc">The Sun located at the middle of our Galaxy is a 4.5 billion-year-old yellow dwarf star. It is comprised of hyrdogen and helium.</p>
             </div>
-            <div class="zodiacs container d-flex flex-row justify-content-center align-items-center flex-wrap">
+            <div class="zodiacs">
                 <div class="zodiac-img">
                     <a><img src="assets\images\zodiacs\aquarius.png"></a>
                     <p class="zodiac-desc">(Water Beaver): January 20 - February 18</p>
@@ -83,8 +82,8 @@
             </div>
         </div>
     </div>
-    <hr>
-    <footer>Cosmic Cocktail Creator © 2023. A Stellar Project by Group 3.</footer>
+  </main>
+    <footer class="d-flex justify-content-center">Cosmic Cocktail Creator © 2023. A Stellar Project by Group 3.</footer>
 
     <!--JQuery Script-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
