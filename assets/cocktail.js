@@ -1,24 +1,80 @@
-//API Ninja: 
-//Cocktail Generator API: oWUzYJAGMIbEDuN8am6SZg==dhh7Xz8OwlWHwy2K
 
-//COCKTAIL LINK & PAREMETER: https://api.api-ninjas.com/v1/cocktail?name=
-//Search by name, ingredient, or instruction
+//This is the key : 9973533
+// var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/recent.php';
+
+//Lookup a random cocktail
+// www.thecocktaildb.com/api/json/v1/9973533/random.php
+
+// Search cocktail by name
+// www.thecocktaildb.com/api/json/v1/9973533/search.php?s=margarita
+
+// List all cocktails by first letter
+// www.thecocktaildb.com/api/json/v1/9973533/search.php?f=a
+
+// Search ingredient by name
+// www.thecocktaildb.com/api/json/v1/9973533/search.php?i=vodka
+
+// Lookup full cocktail details by id
+// www.thecocktaildb.com/api/json/v1/9973533/lookup.php?i=11007
+
+// Lookup ingredient by ID
+// www.thecocktaildb.com/api/json/v1/9973533/lookup.php?iid=552
+
+// Lookup a random cocktail
+// www.thecocktaildb.com/api/json/v1/9973533/random.php
+
+// Lookup a selection of 10 random cocktails (only available to $2+ Patreon supporters)
+// www.thecocktaildb.com/api/json/v1/9973533/randomselection.php
+
+// List Popular cocktails (only available to $2+ Patreon supporters)
+// www.thecocktaildb.com/api/json/v1/9973533/popular.php
+
+// List most latest cocktails (only available to $2+ Patreon supporters)
+// www.thecocktaildb.com/api/json/v1/9973533/latest.php
+
+// Search by ingredient
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?i=Gin
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?i=Vodka
+
+// Filter by multi-ingredient (only available to $2+ Patreon supporters)
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?i=Dry_Vermouth,Gin,Anis
+
+// Filter by alcoholic
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?a=Alcoholic
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?a=Non_Alcoholic
+
+// Filter by Category
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?c=Ordinary_Drink
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?c=Cocktail
+
+// Filter by Glass
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?g=Cocktail_glass
+// www.thecocktaildb.com/api/json/v1/9973533/filter.php?g=Champagne_flute
+
+// List the categories, glasses, ingredients or alcoholic filters
+// www.thecocktaildb.com/api/json/v1/9973533/list.php?c=list
+// www.thecocktaildb.com/api/json/v1/9973533/list.php?g=list
+// www.thecocktaildb.com/api/json/v1/9973533/list.php?i=list
+// www.thecocktaildb.com/api/json/v1/9973533/list.php?a=list
+
+
+//  Images
+// Drink thumbnails
+// Add /preview to the end of the cocktail image URL
+// /images/media/drink/vrwquq1478252802.jpg/preview (100x100 pixels)
+
+
+// Ingredient Thumbnails
+// www.thecocktaildb.com/images/ingredients/gin-Small.png
+// (100x100 pixels)
+// www.thecocktaildb.com/images/ingredients/gin-Medium.png
+// (350x350 pixels)
+// www.thecocktaildb.com/images/ingredients/gin.png
+// (700x700 pixels)
+  
 
 
 
-var name = 'cosm'
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/cocktail?name=' + name,
-    headers: { 'X-Api-Key': 'oWUzYJAGMIbEDuN8am6SZg==dhh7Xz8OwlWHwy2K'},
-    contentType: 'application/json',
-    success: function(result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
 
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
