@@ -6,19 +6,61 @@
 
 
 
-var name = 'cosm'
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/cocktail?name=' + name,
-    headers: { 'X-Api-Key': 'oWUzYJAGMIbEDuN8am6SZg==dhh7Xz8OwlWHwy2K'},
-    contentType: 'application/json',
-    success: function(result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
+
+var cocktailApi = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Cocktail";
+//This generates cocktail array based on category
+var ingredientApi = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Bourbon";
+//this generates cocktail array based on ingredient
+var rand10Api = "https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php";
+//this generates 10 random drinks not specifically cocktails
+var rand1Api = "https://www.thecocktaildb.com/api/json/v2/9973533/random.php";
+//this generates 1 random drink not specifically a cocktail
+
+var cocktailData =[];
+
+var listContainer = document.getElementById('rand5');
+
+listContainer.addEventListener('load' getRand10);
+
+
+function getRand10() {
+
+    fetch(rand10Api)
+    .then(function(response) {
+        return response.json();
+        if (!response.ok) {
+            document.location.replace("./404.html")
+        } else {
+            return response.json();
+        }
+    })
+
+    .then(function(cocktailData) {
+        var 
+    })
+}
+
+
+function getData() {
+    fetch("", {
+        method:'GET',
+        credentials:"same-origin",
+        redirect: 'follow'
+    })
+    .then(function (response) {
+        console.log(response)
+        return response.json();
+        
+    })
+}
+
+
+
+
+
+
+
+
 
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
