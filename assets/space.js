@@ -21,7 +21,18 @@
     "https://apod.nasa.gov/apod/image/1506/AntaresRho_Noller_1080.jpg", 
     "https://apod.nasa.gov/apod/image/pks2349_hst.gif",
     "https://apod.nasa.gov/apod/image/0009/spirograph_heritage.jpg", 
-    "https://apod.nasa.gov/apod/image/1006/partialeclipse_riza.jpg"];
+    "https://apod.nasa.gov/apod/image/1006/partialeclipse_riza.jpg",
+  "https://apod.nasa.gov/apod/image/0209/tychosnr_cxc_c1.jpg",
+  "https://apod.nasa.gov/apod/image/9811/anticenter_glastsim.jpg",
+"https://apod.nasa.gov/apod/image/1705/DesertSky_Horalek_1080.jpg",
+"https://apod.nasa.gov/apod/image/0411/Phobos_hiresME_c1.jpg",
+"https://apod.nasa.gov/apod/image/2108/PerseusFireball_Dandan_960.jpg",
+"https://apod.nasa.gov/apod/image/etacarinae_hst2.gif",
+"https://apod.nasa.gov/apod/image/1409/PapohakuBeach1_CropBow600h.jpg",
+"https://apod.nasa.gov/apod/image/2107/LRVBPIX3M82Crop1024.jpg",
+"https://apod.nasa.gov/apod/image/0204/isstruss_nasa.jpg",
+"https://apod.nasa.gov/apod/image/0603/marsSyrtis_mgs_c.jpg",
+"https://apod.nasa.gov/apod/image/1903/MoonPlanetsStar_Giannobile_1313_annotated.jpg"];
     var randomImageURL = image[Math.floor(Math.random() * (image.length))];
     console.log(randomImageURL);
     document.body.style.backgroundImage= 'url('+randomImageURL+')';
