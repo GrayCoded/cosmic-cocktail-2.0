@@ -1,4 +1,6 @@
-
+var cocktailNameEl = document.querySelector('.h3');
+var cocktailImgEl = document.querySelector('img');
+var cocktailDescriptionEl = document.querySelector('.p');
 //This is the key : 9973533
 // var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/recent.php';
 
@@ -30,48 +32,58 @@
 // www.thecocktaildb.com/api/json/v2/9973533/popular.php
 
 // List most latest cocktails (only available to $2+ Patreon supporters)
-// www.thecocktaildb.com/api/json/v2/9973533/latest.php
+var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
 
 // Search by ingredient
 // www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Gin
 // www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka
 
-// Filter by multi-ingredient (only available to $2+ Patreon supporters)
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Dry_Vermouth,Gin,Anis
-
-// Filter by alcoholic
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Non_Alcoholic
 
 // Filter by Category
 // www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Ordinary_Drink
 // www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Cocktail
 
-// Filter by Glass
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?g=Cocktail_glass
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?g=Champagne_flute
 
-// List the categories, glasses, ingredients or alcoholic filters
-// www.thecocktaildb.com/api/json/v2/9973533/list.php?c=list
-// www.thecocktaildb.com/api/json/v2/9973533/list.php?g=list
-// www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list
-// www.thecocktaildb.com/api/json/v2/9973533/list.php?a=list
-
-
-//  Images
-// Drink thumbnails
-// Add /preview to the end of the cocktail image URL
-// /images/media/drink/vrwquq1478252802.jpg/preview (100x100 pixels)
-
-
-// Ingredient Thumbnails
-// www.thecocktaildb.com/images/ingredients/gin-Small.png
-// (100x100 pixels)
-// www.thecocktaildb.com/images/ingredients/gin-Medium.png
-// (350x350 pixels)
-// www.thecocktaildb.com/images/ingredients/gin.png
-// (700x700 pixels)
+document.body.onload = () => {
+   randomizer();  
+  }
   
+function randomizer() {
+
+   fetch(requestApi)
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        console.log(data.drinks); 
+
+        let drinks = data.drinks;
+
+
+        console.log(drinks[0].strInstructions);
+        console.log(drinks[0].idDrink);
+        console.log(drinks[0].strDrink);
+        console.log(drinks[0].strDrinkThumb);
+
+        var drinkTitle = drinks[0].strDrink;
+        var drinkInst = drinks[0].strInstructions;
+        var drinkImg = drinks[0].strDrinkThumb;
+        
+      //   cocktailDescriptionEl.textContent = drinkInst;
+      //   cocktailNameEl.textConent = drinkTitle;
+      //   cocktailImgEl.appendChild[0] = drinkImg;
+        
+            
+})
+
+   .catch(function(error) {
+      console.log(error);
+ })
+ };
+
+
+randomizer();
+
 
 
 
