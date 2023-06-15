@@ -1,6 +1,7 @@
 var cocktailNameEl = document.querySelector('.h3');
 var cocktailImgEl = document.querySelector('img');
 var cocktailDescriptionEl = document.querySelector('.p');
+var cocktailContainerEl = document.querySelector('.content');
 //This is the key : 9973533
 // var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/recent.php';
 
@@ -10,39 +11,49 @@ var cocktailDescriptionEl = document.querySelector('.p');
 // Search cocktail by name
 // www.thecocktaildb.com/api/json/v2/9973533/search.php?s=margarita
 
-// List all cocktails by first letter
-// www.thecocktaildb.com/api/json/v2/9973533/search.php?f=a
 
-// Search ingredient by name
-// www.thecocktaildb.com/api/json/v2/9973533/search.php?i=vodka
-
-// Lookup full cocktail details by id
-// www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=11007
-
-// Lookup ingredient by ID
-// www.thecocktaildb.com/api/json/v2/9973533/lookup.php?iid=552
-
-// Lookup a random cocktail
-// www.thecocktaildb.com/api/json/v2/9973533/random.php
-
-// Lookup a selection of 10 random cocktails (only available to $2+ Patreon supporters)
-// www.thecocktaildb.com/api/json/v2/9973533/randomselection.php
-
-// List Popular cocktails (only available to $2+ Patreon supporters)
-// www.thecocktaildb.com/api/json/v2/9973533/popular.php
-
-// List most latest cocktails (only available to $2+ Patreon supporters)
 var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
 
-// Search by ingredient
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Gin
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=Vodka
 
 
-// Filter by Category
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Ordinary_Drink
-// www.thecocktaildb.com/api/json/v2/9973533/filter.php?c=Cocktail
 
+var h3El = document.createElement("h3");
+var cardEl = document.createElement("div");
+var imgEl = document.createElement("img");
+var instEl = document.createElement("p");
+
+var listEl = document.createElement("ol");
+
+var li1 = document.createElement("li");
+var li2 = document.createElement("li");
+var li3 = document.createElement("li");
+var li4 = document.createElement("li");
+var li5 = document.createElement("li");
+
+h1El.textContent = [];
+imgEl.setAttribute = ('src','');
+
+// Add text for list items
+li1.textContent = "1";
+li2.textContent = "2";
+li3.textContent = "3";
+li4.textContent = "4";
+li4.textContent = "5";
+
+cocktailContainerEl.appendChild(h1El);
+cocktailContainerEl.appendChild(infoEl);
+cardEl.appendChild(imgEl);
+cardEl.appendChild(kittenEl);
+cardEl.appendChild(nameEl);
+cocktailContainerEl.appendChild(listEl);
+
+cocktailContainerEl.appendChild(listEl);
+
+listEl.appendChild(li1);
+listEl.appendChild(li2);
+listEl.appendChild(li3);
+listEl.appendChild(li4);
+listEl.appendChild(li5);
 
 document.body.onload = () => {
    randomizer();  
@@ -59,6 +70,7 @@ function randomizer() {
 
         let drinks = data.drinks;
 
+       for (i = 0; i < 5; i++) {
 
         console.log(drinks[0].strInstructions);
         console.log(drinks[0].idDrink);
@@ -69,10 +81,14 @@ function randomizer() {
         var drinkInst = drinks[0].strInstructions;
         var drinkImg = drinks[0].strDrinkThumb;
         
-      //   cocktailDescriptionEl.textContent = drinkInst;
-      //   cocktailNameEl.textConent = drinkTitle;
-      //   cocktailImgEl.appendChild[0] = drinkImg;
-        
+        cocktailNameEl.append(drinkTitle)
+        cocktailImgEl.append(drinkImg)
+        cocktailDescriptionEl.append(drinkInst)
+
+       }
+
+ 
+    
             
 })
 
