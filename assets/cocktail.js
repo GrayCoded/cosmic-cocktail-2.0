@@ -17,44 +17,6 @@ var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
 
 
 
-var h3El = document.createElement("h3");
-var cardEl = document.createElement("div");
-var imgEl = document.createElement("img");
-var instEl = document.createElement("p");
-
-var listEl = document.createElement("ol");
-
-var li1 = document.createElement("li");
-var li2 = document.createElement("li");
-var li3 = document.createElement("li");
-var li4 = document.createElement("li");
-var li5 = document.createElement("li");
-
-h1El.textContent = [];
-imgEl.setAttribute = ('src','');
-
-// Add text for list items
-li1.textContent = "1";
-li2.textContent = "2";
-li3.textContent = "3";
-li4.textContent = "4";
-li4.textContent = "5";
-
-cocktailContainerEl.appendChild(h1El);
-cocktailContainerEl.appendChild(infoEl);
-cardEl.appendChild(imgEl);
-cardEl.appendChild(kittenEl);
-cardEl.appendChild(nameEl);
-cocktailContainerEl.appendChild(listEl);
-
-cocktailContainerEl.appendChild(listEl);
-
-listEl.appendChild(li1);
-listEl.appendChild(li2);
-listEl.appendChild(li3);
-listEl.appendChild(li4);
-listEl.appendChild(li5);
-
 document.body.onload = () => {
    randomizer();  
   }
@@ -66,29 +28,29 @@ function randomizer() {
         return response.json()
       })
       .then(function (data) {
-        console.log(data.drinks); 
+        console.log(data); 
 
         let drinks = data.drinks;
 
-       for (i = 0; i < 5; i++) {
-
+         drinks.forEach(drink,index); {
+             if (index >= 5) {
+               return
+             } console.log(drink.strDrink)
+         } 
+        
+       
         console.log(drinks[0].strInstructions);
-        console.log(drinks[0].idDrink);
         console.log(drinks[0].strDrink);
         console.log(drinks[0].strDrinkThumb);
 
-        var drinkTitle = drinks[0].strDrink;
-        var drinkInst = drinks[0].strInstructions;
-        var drinkImg = drinks[0].strDrinkThumb;
-        
-        cocktailNameEl.append(drinkTitle)
-        cocktailImgEl.append(drinkImg)
-        cocktailDescriptionEl.append(drinkInst)
+        var drinkTitle = data.strDrink;
+        var drinkInst = data.strInstructions;
+        var drinkImg = data.strDrinkThumb;
 
-       }
-
- 
-    
+      var cocktailNameEl = document.querySelector('h3');
+      var cocktailImgEl = document.querySelector('img');
+      var cocktailDescriptionEl = document.querySelector('.p');
+      
             
 })
 
