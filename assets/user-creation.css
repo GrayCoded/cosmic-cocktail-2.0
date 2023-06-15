@@ -1,6 +1,19 @@
 body {
+    background-image: url("https://i.gifer.com/3QAe.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Orbitron', monospace, sans-serif;
+  }
+
+  .loader-hidden {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    display: none;
+    margin: 20%;
+  }
+
+  .all-content-hider {
+    display: none;
   }
