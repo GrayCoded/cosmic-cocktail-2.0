@@ -1,14 +1,14 @@
 * {
+    cursor: url('images/spaceshuttle.png'), auto;
     font-family: 'Orbitron', monospace, sans-serif;
     color: white;
 }
-
 html, body {
     height: 100%;
 }
 
 body {
-    background-image: url(images/sunAndEarth.gif);
+    background-image: url('images/sunAndEarth.gif');
     background-position: center;
 }
 
@@ -64,6 +64,10 @@ header h3 {
 
 .zodiac-img img {
     width: 100%;
+}
+
+.zodiac-img img:hover {
+    cursor: url('images/spaceshuttle2.png'), auto;
 }
 
 .zodiac-img {
