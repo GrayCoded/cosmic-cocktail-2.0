@@ -45,16 +45,8 @@ function randomizer() {
        document.querySelector("#card-text4").textContent = cocktailList.instructions;
        document.querySelector("#card-img-top4").src = cocktailList.cocktailImage;
  
-     
- 
        }
- 
-       
- 
-       
      })
-    
- 
      .catch(function (error) {
        console.log(error);
      });
