@@ -26,26 +26,34 @@ function randomizer() {
       .then(function (data) {
         console.log(data.strDrink); 
 
-        var listDrink = {
-            drinks: data.drinks[0].strDrink,
-            images: data.drinks[0].strDrinkThumb,
-            ingredients: [data.drinks[0].strIngredient1, data.drinks[0].strIngredient2, data.drinks[0].strIngredient3, 
-                data.drinks[0].strIngredient4,
-                data.drinks[0].strIngredient5, data.drinks[0].strIngredient6, data.drinks[0].strIngredient7],
-                instructions: data.drinks[0].strInstructions,
+       
+        for (var i = 0; i < Math.min(4, data.drinks.length); i++) {
+         var cocktailList = {
+           cocktailName: data.drinks[i].strDrink,
+           cocktailImage: data.drinks[i].strDrinkThumb,
+           instructions: data.drinks[i].strInstructions,
          };
-
-         for (let i = 0; i <= listDrink.drinks.length; i++) {
-                console.log(listDrink);
-                document.querySelector(".drink-name1").textContent = listDrink.drinks[0];
-                document.querySelector(".instructions1").textContent = listDrink.instructions[0];
-
-                document.querySelector(".drink-name2").textContent = listDrink.drinks[1];
-                document.querySelector(".instructions2").textContent = listDrink.instructions[1];
-
-         }
-            
+         console.log(cocktailList);
  
+       
+       document.querySelector("#card-header1").textContent = "The Cosmic " +  cocktailList.cocktailName;
+       document.querySelector("#card-text1").textContent = cocktailList.instructions;
+       document.querySelector("#card-img-top1").src = cocktailList.cocktailImage;
+ 
+       document.querySelector("#card-header2").textContent = "The Astro " + cocktailList.cocktailName;
+       document.querySelector("#card-text2").textContent = cocktailList.instructions;
+       document.querySelector("#card-img-top2").src = cocktailList.cocktailImage;
+ 
+       document.querySelector("#card-header3").textContent = "The Quantum " + cocktailList.cocktailName;
+       document.querySelector("#card-text3").textContent = cocktailList.instructions;
+       document.querySelector("#card-img-top3").src = cocktailList.cocktailImage;
+ 
+       document.querySelector("#card-header4").textContent = "The Stellar " + cocktailList.cocktailName;
+       document.querySelector("#card-text4").textContent = cocktailList.instructions;
+       document.querySelector("#card-img-top4").src = cocktailList.cocktailImage;
+ 
+            
+      }
     
             
 })
