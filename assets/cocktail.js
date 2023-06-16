@@ -7,13 +7,24 @@
 // Search cocktail by name
 // www.thecocktaildb.com/api/json/v2/9973533/search.php?s=margarita
 
-var requestApi = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php";
+
+
+var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
+let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
+
+
+
+// document.body.onload = () => {
+//    randomizer();  
+//   }
+  
 
 document.body.onload = () => {
   randomizer();
 };
 function randomizer() {
    fetch(requestApi)
+
      .then(function (response) {
        return response.json();
      })
@@ -25,6 +36,7 @@ function randomizer() {
            cocktailName: data.drinks[i].strDrink,
            cocktailImage: data.drinks[i].strDrinkThumb,
            instructions: data.drinks[i].strInstructions,
+
          };
          console.log(cocktailList);
  
@@ -47,12 +59,14 @@ function randomizer() {
  
        }
      })
+
      .catch(function (error) {
        console.log(error);
      });
  }
  
  randomizer();
+
 
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
@@ -87,12 +101,16 @@ let spaceFacts = [
     the low gravity combined with the lakes of methane would make your drink float in the air, talk about
     being lightheaded...`,
 
-  `The first man-made alcohol originated in 7000 BCE, meaning at that time the "North Star" would not have
-    been the same star we use for navigation in modern times.`,
-];
+   
+    `The first man-made alcohol originated in 7000 BCE, meaning at that time the "North Star" would not have
+    been the same star we use for navigation in modern times.`]
+    
+ // spits out random facts to put in a paragraph
+    let randomFactIndex = Math.floor(Math.random() * spaceFacts.length)
+    let randomFact = spaceFacts[randomFactIndex]
+    let pFacts = document.querySelector('.space-facts')
+    pFacts.textContent = randomFact
+    
+    
+    let spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"]
 
-// spits out random facts to put in a div
-let randomFactIndex = Math.floor(Math.random() * spaceFacts.length);
-let randomFact = spaceFacts[randomFactIndex];
-
-console.log(randomFact);
