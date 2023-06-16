@@ -10,6 +10,7 @@ html, body {
 body {
     background-image: url('images/sunAndEarth.gif');
     background-position: center;
+    transition: background-image ease-in-out 0.7s;
 }
 
 header {
@@ -70,6 +71,10 @@ header h3 {
     cursor: url('images/spaceshuttle2.png'), auto;
 }
 
+.hovered {
+    background-image: url('images/backgroundBlank.png');
+}
+
 .zodiac-img {
     margin-left: 1%;
     margin-right: 1%;
@@ -81,6 +86,7 @@ header h3 {
     outline: ridge 2px rgba(255, 230, 0, 0.636);
     border-radius: 50%;
     box-shadow: 1px 1px 5px 5px #fbff0095;
+    background-color: rgba(0, 0, 0, 0.296);
 }
 
 footer {
