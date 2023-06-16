@@ -33,15 +33,17 @@ function randomizer() {
                 data.drinks[0].strIngredient4,
                 data.drinks[0].strIngredient5, data.drinks[0].strIngredient6, data.drinks[0].strIngredient7],
                 instructions: data.drinks[0].strInstructions,
+                
          };
 
          for (let i = 0; i <= listDrink.drinks.length; i++) {
                 console.log(listDrink);
-                document.querySelector(".drink-name1").textContent = listDrink.drinks[0];
-                document.querySelector(".instructions1").textContent = listDrink.instructions[0];
+               
+                document.querySelector(".drink-name1").textContent = listDrink.drinks;
+                document.querySelector(".instructions1").textContent = listDrink.instructions;
 
-                document.querySelector(".drink-name2").textContent = listDrink.drinks[1];
-                document.querySelector(".instructions2").textContent = listDrink.instructions[1];
+                document.querySelector(".drink-name2").textContent = listDrink.drinks;
+                document.querySelector(".instructions2").textContent = listDrink.instructions;
 
          }
             
