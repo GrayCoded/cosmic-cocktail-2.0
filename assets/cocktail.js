@@ -24,30 +24,28 @@ function randomizer() {
         return response.json()
       })
       .then(function (data) {
-        console.log(data.drinks.strDrink); 
+        console.log(data.drinks); 
+         
+         
+         for (var i = 0; i <= data.drinks.length; i++) {
+                console.log(data.drinks[i]);
+                var listDrinks = 
+            {
+                drinkName: data.drinks[i].strDrink,
+                image: data.drinks[i].strDrinkThumb,
+                ingredients: [],
+                instructions: data.drinks[i].strInstructions,
+            };
 
-        var listDrink = {
-            drinks: data.drinks[0].strDrink,
-            images: data.drinks[0].strDrinkThumb,
-            ingredients: [data.drinks[0].strIngredient1, data.drinks[0].strIngredient2, data.drinks[0].strIngredient3, 
-                data.drinks[0].strIngredient4,
-                data.drinks[0].strIngredient5, data.drinks[0].strIngredient6, data.drinks[0].strIngredient7],
-                instructions: data.drinks[0].strInstructions,
-         };
+                document.querySelector(".drink-name1").textContent = listDrinks.drinkName;
+                document.querySelector(".instructions1").textContent = listDrinks.instructions;
 
-         for (let i = 0; i <= listDrink.drinks.length; i++) {
-                console.log(listDrink);
-                document.querySelector(".drink-name1").textContent = listDrink.drinks[0];
-                document.querySelector(".instructions1").textContent = listDrink.instructions[0];
-
-                document.querySelector(".drink-name2").textContent = listDrink.drinks[1];
-                document.querySelector(".instructions2").textContent = listDrink.instructions[1];
+                document.querySelector(".drink-name2").textContent = listDrinks.drinkName;
+                document.querySelector(".instructions2").textContent = listDrinks.instructions;
 
          }
             
  
-    
-            
 })
 
    .catch(function(error) {
