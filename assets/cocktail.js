@@ -1,7 +1,4 @@
-var cocktailNameEl = document.querySelector('.h3');
-var cocktailImgEl = document.querySelector('img');
-var cocktailDescriptionEl = document.querySelector('.p');
-var cocktailContainerEl = document.querySelector('.content');
+
 //This is the key : 9973533
 // var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/recent.php';
 
@@ -16,45 +13,6 @@ var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
 
 
 
-
-var h3El = document.createElement("h3");
-var cardEl = document.createElement("div");
-var imgEl = document.createElement("img");
-var instEl = document.createElement("p");
-
-var listEl = document.createElement("ol");
-
-var li1 = document.createElement("li");
-var li2 = document.createElement("li");
-var li3 = document.createElement("li");
-var li4 = document.createElement("li");
-var li5 = document.createElement("li");
-
-h1El.textContent = [];
-imgEl.setAttribute = ('src','');
-
-// Add text for list items
-li1.textContent = "1";
-li2.textContent = "2";
-li3.textContent = "3";
-li4.textContent = "4";
-li4.textContent = "5";
-
-cocktailContainerEl.appendChild(h1El);
-cocktailContainerEl.appendChild(infoEl);
-cardEl.appendChild(imgEl);
-cardEl.appendChild(kittenEl);
-cardEl.appendChild(nameEl);
-cocktailContainerEl.appendChild(listEl);
-
-cocktailContainerEl.appendChild(listEl);
-
-listEl.appendChild(li1);
-listEl.appendChild(li2);
-listEl.appendChild(li3);
-listEl.appendChild(li4);
-listEl.appendChild(li5);
-
 document.body.onload = () => {
    randomizer();  
   }
@@ -66,27 +24,27 @@ function randomizer() {
         return response.json()
       })
       .then(function (data) {
-        console.log(data.drinks); 
+        console.log(data.drinks.strDrink); 
 
-        let drinks = data.drinks;
+        var listDrink = {
+            drinks: data.drinks[0].strDrink,
+            images: data.drinks[0].strDrinkThumb,
+            ingredients: [data.drinks[0].strIngredient1, data.drinks[0].strIngredient2, data.drinks[0].strIngredient3, 
+                data.drinks[0].strIngredient4,
+                data.drinks[0].strIngredient5, data.drinks[0].strIngredient6, data.drinks[0].strIngredient7],
+                instructions: data.drinks[0].strInstructions,
+         };
 
-       for (i = 0; i < 5; i++) {
+         for (let i = 0; i <= listDrink.drinks.length; i++) {
+                console.log(listDrink);
+                document.querySelector(".drink-name1").textContent = listDrink.drinks[0];
+                document.querySelector(".instructions1").textContent = listDrink.instructions[0];
 
-        console.log(drinks[0].strInstructions);
-        console.log(drinks[0].idDrink);
-        console.log(drinks[0].strDrink);
-        console.log(drinks[0].strDrinkThumb);
+                document.querySelector(".drink-name2").textContent = listDrink.drinks[1];
+                document.querySelector(".instructions2").textContent = listDrink.instructions[1];
 
-        var drinkTitle = drinks[0].strDrink;
-        var drinkInst = drinks[0].strInstructions;
-        var drinkImg = drinks[0].strDrinkThumb;
-        
-        cocktailNameEl.append(drinkTitle)
-        cocktailImgEl.append(drinkImg)
-        cocktailDescriptionEl.append(drinkInst)
-
-       }
-
+         }
+            
  
     
             
