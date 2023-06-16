@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+
 // NASA API: uHvPZVEr3rkpFfv76yoNrgZRaTdKeLNUEjnT7joe
 //GUTHUB DOC: https://github.com/nasa/apod-api 
 
@@ -33,3 +35,16 @@
     document.querySelector("#all-content-hider").style.display = "none";
     generateRandomBackground();  
    }
+
+
+ let zodiacs = document.querySelectorAll('.zodiac-img')
+
+ function zodiacClick() {
+  location.assign('user-creations.html')
+ }
+
+ zodiacs.forEach(function(zodiac) {
+  zodiac.addEventListener('click', zodiacClick)
+ })
+
+})
