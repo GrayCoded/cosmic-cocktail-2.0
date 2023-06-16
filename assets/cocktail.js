@@ -10,12 +10,13 @@
 
 
 var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
+let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
 
 
 
-document.body.onload = () => {
-   randomizer();  
-  }
+// document.body.onload = () => {
+//    randomizer();  
+//   }
   
 function randomizer() {
 
@@ -24,7 +25,7 @@ function randomizer() {
         return response.json()
       })
       .then(function (data) {
-        console.log(data.drinks.strDrink); 
+        console.log(data.strDrink); 
 
         var listDrink = {
             drinks: data.drinks[0].strDrink,
@@ -56,11 +57,32 @@ function randomizer() {
  };
 
 
-randomizer();
+// randomizer();
 
 
+function userCocktail() {
+   fetch(randomApi)
+   .then(response => {
+      if (!response.ok) {
+         alert('Bad network request')
+      } 
+      return response.json()
+   })
+   .then(data => {
+      writeCocktail(data.drinks[0])
+   })
+}
+userCocktail()
 
+function writeCocktail(drink) {
+   let randomWordIndex = Math.floor(Math.random() * spaceWords.length)
+   let spaceWord = spaceWords[randomWordIndex]
 
+   console.log(drink)
+   document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
+   document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
+   
+}
 
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
@@ -98,8 +120,11 @@ let spaceFacts = [
     `The first man-made alcohol originated in 7000 BCE, meaning at that time the "North Star" would not have
     been the same star we use for navigation in modern times.`]
     
- // spits out random facts to put in a div
+ // spits out random facts to put in a paragraph
     let randomFactIndex = Math.floor(Math.random() * spaceFacts.length)
     let randomFact = spaceFacts[randomFactIndex]
-
-    console.log(randomFact)
+    let pFacts = document.querySelector('.space-facts')
+    pFacts.textContent = randomFact
+    
+    
+    let spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"]
