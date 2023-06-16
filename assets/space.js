@@ -48,3 +48,18 @@ document.addEventListener('DOMContentLoaded', function() {
  })
 
 })
+
+let zodiacImg = document.querySelectorAll('.hoverChange');
+
+zodiacImg.forEach(function(img) {
+
+
+img.addEventListener('mouseover', function() {
+  document.body.classList.add('hovered');
+ });
+
+img.addEventListener('mouseout', function() {
+  document.body.classList.remove('hovered');
+ });
+
+})
