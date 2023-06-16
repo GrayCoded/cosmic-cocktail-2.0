@@ -7,13 +7,38 @@
 // Search cocktail by name
 // www.thecocktaildb.com/api/json/v2/9973533/search.php?s=margarita
 
-var requestApi = "https://www.thecocktaildb.com/api/json/v2/9973533/latest.php";
+
+
+var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
+let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
+
+
+
+// document.body.onload = () => {
+//    randomizer();  
+//   }
+  
 
 document.body.onload = () => {
   randomizer();
 };
 function randomizer() {
    fetch(requestApi)
+
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        console.log(data.strDrink); 
+
+        var listDrink = {
+            drinks: data.drinks[0].strDrink,
+            images: data.drinks[0].strDrinkThumb,
+            ingredients: [data.drinks[0].strIngredient1, data.drinks[0].strIngredient2, data.drinks[0].strIngredient3, 
+                data.drinks[0].strIngredient4,
+                data.drinks[0].strIngredient5, data.drinks[0].strIngredient6, data.drinks[0].strIngredient7],
+                instructions: data.drinks[0].strInstructions,
+
      .then(function (response) {
        return response.json();
      })
@@ -25,6 +50,7 @@ function randomizer() {
            cocktailName: data.drinks[i].strDrink,
            cocktailImage: data.drinks[i].strDrinkThumb,
            instructions: data.drinks[i].strInstructions,
+
          };
          console.log(cocktailList);
  
@@ -54,6 +80,43 @@ function randomizer() {
        
      })
     
+
+            
+})
+
+   .catch(function(error) {
+      console.log(error);
+ })
+ };
+
+
+// randomizer();
+
+
+function userCocktail() {
+   fetch(randomApi)
+   .then(response => {
+      if (!response.ok) {
+         alert('Bad network request')
+      } 
+      return response.json()
+   })
+   .then(data => {
+      writeCocktail(data.drinks[0])
+   })
+}
+userCocktail()
+
+function writeCocktail(drink) {
+   let randomWordIndex = Math.floor(Math.random() * spaceWords.length)
+   let spaceWord = spaceWords[randomWordIndex]
+
+   console.log(drink)
+   document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
+   document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
+   
+}
+
  
      .catch(function (error) {
        console.log(error);
@@ -61,6 +124,7 @@ function randomizer() {
  }
  
  randomizer();
+
 
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
@@ -95,6 +159,20 @@ let spaceFacts = [
     the low gravity combined with the lakes of methane would make your drink float in the air, talk about
     being lightheaded...`,
 
+   
+    `The first man-made alcohol originated in 7000 BCE, meaning at that time the "North Star" would not have
+    been the same star we use for navigation in modern times.`]
+    
+ // spits out random facts to put in a paragraph
+    let randomFactIndex = Math.floor(Math.random() * spaceFacts.length)
+    let randomFact = spaceFacts[randomFactIndex]
+    let pFacts = document.querySelector('.space-facts')
+    pFacts.textContent = randomFact
+    
+    
+    let spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"]
+
+
   `The first man-made alcohol originated in 7000 BCE, meaning at that time the "North Star" would not have
     been the same star we use for navigation in modern times.`,
 ];
@@ -104,3 +182,4 @@ let randomFactIndex = Math.floor(Math.random() * spaceFacts.length);
 let randomFact = spaceFacts[randomFactIndex];
 
 console.log(randomFact);
+
