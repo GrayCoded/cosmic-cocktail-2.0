@@ -42,6 +42,7 @@ function writeCocktail(drink) {
   console.log(drink)
   document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
   document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
+  document.getElementById('')
   
 }
 // this will be displayed somewhere below the generated cocktail

@@ -10,6 +10,11 @@ body {
     background-attachment: fixed;
   }
 
+#all-content-hider button.bg-black:first-of-type {
+  display: flex;
+  position: absolute;
+}
+
 
 .title h1 {
   text-shadow: 1px 3px rgb(203, 203, 56);
@@ -47,10 +52,6 @@ body {
   border-radius: 20%;
   padding: 5%;
   background: #e1ff0020;
-}
-
-#user-horo {
-  background-color: wheat;
 }
 
 .ins-rec {
