@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
 // NASA API: uHvPZVEr3rkpFfv76yoNrgZRaTdKeLNUEjnT7joe
 //GUTHUB DOC: https://github.com/nasa/apod-api 
 
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.body.onload = () => {
     document.querySelector(".loader-hidden").style.display = "block";
-    document.querySelector("#all-content-hider").style.display = "none";
     generateRandomBackground();  
    }
 
@@ -59,7 +57,7 @@ img.addEventListener('mouseover', function() {
  });
 
 img.addEventListener('mouseout', function() {
-  document.body.classList.remove('hovered');
- });
+  document.body.classList.remove('hovered')
+ })
 
 })
