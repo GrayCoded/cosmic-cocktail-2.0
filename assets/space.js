@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var randomImageURL = image[Math.floor(Math.random() * (image.length))];
     console.log(randomImageURL);
     document.body.style.backgroundImage= 'url('+randomImageURL+')';
+    let cocktailContain = document.getElementById('all-content-hider')
+    cocktailContain.classList.add('d-flex')
 })
 .catch(function(error) {
     console.log(error);

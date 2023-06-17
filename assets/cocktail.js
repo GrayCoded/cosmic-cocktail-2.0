@@ -90,6 +90,5 @@ let spaceFacts = [
    //  let spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"]
 
 // spits out random facts to put in a div
-
 console.log(randomFact);
 
