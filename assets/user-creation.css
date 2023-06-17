@@ -23,10 +23,12 @@ body {
     margin: 20%;
   }
 
+  
+
   #all-content-hider {
     display: none;
     border-radius: 20%;
-    animation: glowing 2s;
+    animation: glowing 4s;
   }
 
 #created-name {
