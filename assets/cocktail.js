@@ -7,19 +7,22 @@
 
 // Search cocktail by name
 // www.thecocktaildb.com/api/json/v2/9973533/search.php?s=margarita
+var spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"];
+var randomWordIndex = Math.floor(Math.random() * spaceWords.length);
+var  spaceWord = spaceWords[randomWordIndex];
 
 
 var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
 let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
+let randomishApi ='https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php'
 
 
-
-// document.body.onload = () => {
-//    randomizer();  
-//   }
+document.body.onload = () => {
+   randomizer();  
+  }
 function randomizer() {
 
-   fetch(requestApi)
+   fetch(randomishApi)
       .then(function (response) {
         return response.json()
       })
@@ -34,24 +37,18 @@ function randomizer() {
            instructions: data.drinks[i].strInstructions,
          };
          console.log(cocktailList);
- 
-       
-       document.querySelector("#card-header1").textContent = "The Cosmic " +  cocktailList.cocktailName;
-       document.querySelector("#card-text1").textContent = cocktailList.instructions;
-       document.querySelector("#card-img-top1").src = cocktailList.cocktailImage;
- 
-       document.querySelector("#card-header2").textContent = "The Astro " + cocktailList.cocktailName;
-       document.querySelector("#card-text2").textContent = cocktailList.instructions;
-       document.querySelector("#card-img-top2").src = cocktailList.cocktailImage;
- 
-       document.querySelector("#card-header3").textContent = "The Quantum " + cocktailList.cocktailName;
-       document.querySelector("#card-text3").textContent = cocktailList.instructions;
-       document.querySelector("#card-img-top3").src = cocktailList.cocktailImage;
- 
-       document.querySelector("#card-header4").textContent = "The Stellar " + cocktailList.cocktailName;
-       document.querySelector("#card-text4").textContent = cocktailList.instructions;
-       document.querySelector("#card-img-top4").src = cocktailList.cocktailImage;
- 
+
+         let drImg = document.querySelectorAll('.card-img-top') 
+         let drTitle = document.querySelectorAll('.card-header')
+         let drInfo = document.querySelectorAll('.card-text')
+
+         let currentImg = drImg[i];
+         let currentTitle = drTitle[i];
+         let currentInfo = drInfo[i];
+
+         currentImg.src = cocktailList.cocktailImage;
+         currentTitle.textContent =`${spaceWord} ${cocktailList.cocktailName}`;
+         currentInfo.textContent = cocktailList.instructions
             
       }
     
@@ -64,7 +61,7 @@ function randomizer() {
  };
 
 
-// randomizer();
+randomizer();
 
 
 function userCocktail() {
@@ -80,11 +77,11 @@ function userCocktail() {
    })
 }
 userCocktail()
+v
 
 function writeCocktail(drink) {
    let randomWordIndex = Math.floor(Math.random() * spaceWords.length)
-   let spaceWord = spaceWords[randomWordIndex]
-
+   let  spaceWord = spaceWords[randomWordIndex]
    console.log(drink)
    document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
    document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
@@ -134,7 +131,7 @@ let spaceFacts = [
     pFacts.textContent = randomFact
     
     
-    let spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"]
+   //  let spaceWords = ['Space', 'Galactic', 'Stellar', 'Orbiting', 'Astronomic', 'Lunar', 'Solar','Martian', "Nyx's", "Thor's"]
 
 // spits out random facts to put in a div
 
