@@ -10,10 +10,16 @@ body {
     background-attachment: fixed;
   }
 
-#all-content-hider button.bg-black:first-of-type {
-  display: flex;
-  position: absolute;
-}
+  .buttons {
+    background-color: rgba(13, 0, 32, 0.659);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 2vh;
+    margin-left: 2vw;
+    gap: 5vw;
+    margin-bottom: 1vh;
+  }
 
 
 .title h1 {
@@ -32,8 +38,11 @@ body {
 
   #all-content-hider {
     display: none;
-    border-radius: 20%;
+    border-radius: 10%;
     animation: glowing 4s;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
 #created-name {
