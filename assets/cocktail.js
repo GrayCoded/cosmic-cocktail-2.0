@@ -16,78 +16,34 @@ var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
 let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
 let randomishApi ='https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php'
 
-
-document.body.onload = () => {
-   randomizer();  
-  }
-function randomizer() {
-
-   fetch(randomishApi)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        console.log(data.strDrink); 
-
-       
-        for (var i = 0; i < Math.min(4, data.drinks.length); i++) {
-         var cocktailList = {
-           cocktailName: data.drinks[i].strDrink,
-           cocktailImage: data.drinks[i].strDrinkThumb,
-           instructions: data.drinks[i].strInstructions,
-         };
-         console.log(cocktailList);
-
-         let drImg = document.querySelectorAll('.card-img-top') 
-         let drTitle = document.querySelectorAll('.card-header')
-         let drInfo = document.querySelectorAll('.card-text')
-
-         let currentImg = drImg[i];
-         let currentTitle = drTitle[i];
-         let currentInfo = drInfo[i];
-
-         currentImg.src = cocktailList.cocktailImage;
-         currentTitle.textContent =`${spaceWord} ${cocktailList.cocktailName}`;
-         currentInfo.textContent = cocktailList.instructions
-            
-      }
-    
-            
-})
-
-   .catch(function(error) {
-      console.log(error);
- })
- };
+let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php';
 
 
-randomizer();
-
-
-function userCocktail() {
-   fetch(randomApi)
-   .then(response => {
-      if (!response.ok) {
-         alert('Bad network request')
-      } 
-      return response.json()
-   })
-   .then(data => {
-      writeCocktail(data.drinks[0])
-   })
+ function userCocktail() {
+  fetch(randomApi)
+  .then(response => {
+     if (!response.ok) {
+        alert('Bad network request')
+     } 
+     return response.json()
+  })
+  .then(data => {
+     writeCocktail(data.drinks[0])
+  })
 }
 userCocktail()
-v
+
+//Spacewords needs to be declared before this function in order to work
 
 function writeCocktail(drink) {
-   let randomWordIndex = Math.floor(Math.random() * spaceWords.length)
-   let  spaceWord = spaceWords[randomWordIndex]
-   console.log(drink)
-   document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
-   document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
-   
-}
+  let randomWordIndex = Math.floor(Math.random() * spaceWords.length)
+  let spaceWord = spaceWords[randomWordIndex]
 
+  console.log(drink)
+  document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
+  document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
+  
+}
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
     `Did you know that some breweries around the world use actual meteorites in their brewing process?`,
