@@ -1,10 +1,18 @@
+* {
+  font-family: 'Orbitron', monospace, sans-serif;
+  color: azure;
+}
+
 body {
-    background-image: url("https://i.gifer.com/3QAe.gif");
+    /* background-image: url("https://i.gifer.com/3QAe.gif"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Orbitron', monospace, sans-serif;
   }
+
+.title h1 {
+  text-shadow: 1px 3px rgb(203, 203, 56);
+}
 
   .loader-hidden {
     font-size: 60px;
@@ -14,6 +22,15 @@ body {
     margin: 20%;
   }
 
-  .all-content-hider {
+  #all-content-hider {
     display: none;
   }
+
+#created-name {
+  text-shadow: 1px 2px rgb(255, 255, 0);
+}
+
+#user-horo {
+  background-color: wheat;
+}
+
