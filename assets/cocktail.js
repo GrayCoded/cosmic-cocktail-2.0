@@ -38,12 +38,21 @@ userCocktail()
 function writeCocktail(drink) {
   let randomWordIndex = Math.floor(Math.random() * spaceWords.length)
   let spaceWord = spaceWords[randomWordIndex]
-
+  let ingredients = []
   console.log(drink)
   document.getElementById('created-name').textContent = `${spaceWord} ${drink.strDrink}`
   document.getElementById('cocktail-picture').children[0].src = drink.strDrinkThumb
-  document.getElementById('')
+  document.getElementById('cocktail-instructions').children[0].textContent = drink.strInstructions
   
+  // this loop makes sure 'null' wont be displayed, or any 'falsey' values
+  for (let i = 1; i <= 15; i++) {
+   if (drink['strIngredient' + i]) {
+      ingredients.push(drink['strIngredient' + i])
+   }
+  }
+  let ingredientsText = ingredients.join(', ')
+
+  document.getElementById('cocktail-ingredients').children[0].textContent = ingredientsText
 }
 // this will be displayed somewhere below the generated cocktail
 let spaceFacts = [
