@@ -39,7 +39,7 @@ body {
 .name-img {
   border-radius: 20%;
   margin: 5vh;
-  animation: pulse 5s infinite;
+  animation: pulse 2s infinite;
 }
 
 #cocktail-picture img {
@@ -64,15 +64,27 @@ body {
 }
 
 @keyframes pulse {
-  0% { outline: solid 30px #00ffea95; }
+  0% { outline: solid 50px #00ffea95; }
 
-  25% { outline: solid 25px #00c8ff95; } 
+  10% { outline: solid 48px #00ffe495; }
 
-  50% { outline: solid 20px #00e5ff95; }
+  20% { outline: solid 46px #00ffdb95; }
 
-  75% { outline: solid 25px #00ffdd95; } 
+  30% { outline: solid 44px #00ffd295; }
 
-  100% { outline: solid 30px #00ffea95; }
+  40% { outline: solid 42px #00ffc895; }
+
+  50% { outline: solid 40px #00e5ff95; }
+
+  60% { outline: solid 42px #00ffc895; }
+
+  70% { outline: solid 44px #00ffd295; }
+
+  80% { outline: solid 46px #00ffdb95; }
+
+  90% { outline: solid 48px #00ffe495; }
+
+  100% { outline: solid 50px #00ffea95; }
 }
 
 
