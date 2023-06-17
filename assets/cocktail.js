@@ -13,10 +13,10 @@ var  spaceWord = spaceWords[randomWordIndex];
 
 
 var requestApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/latest.php';
-let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
-let randomishApi ='https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php'
+var randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php'
+var randomishApi ='https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php'
 
-let randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php';
+var randomApi = 'https://www.thecocktaildb.com/api/json/v2/9973533/random.php';
 
 
  function userCocktail() {
