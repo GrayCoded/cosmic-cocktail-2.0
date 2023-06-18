@@ -76,11 +76,7 @@ function storage() {
 }
 
 
-      
-
-
-
-
+   
 
 
 // this will be displayed somewhere below the generated cocktail
