@@ -16,6 +16,7 @@ document.querySelector("#storage-box").textContent = localStorage.user;
 
 function displayCocktail() {
 
+
  
     if (lastCocktail !== null ) {
        document.querySelector('#created-name').textContent = localStorage.lastCocktail;
