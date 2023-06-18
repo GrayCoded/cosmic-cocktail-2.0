@@ -1,4 +1,5 @@
 * {
+  cursor: url('images/spaceshuttle.png'), auto;
   font-family: 'Orbitron', monospace, sans-serif;
   color: azure;
 }
@@ -52,6 +53,10 @@ body {
     padding-right: 100px;
     padding-bottom: 20px;
   }
+
+#cocktail-container:hover {
+  cursor: url('images/spaceshuttle2.png'), auto;
+}
 
 #created-name {
   color: #e1ff00;
