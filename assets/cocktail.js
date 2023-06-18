@@ -75,50 +75,8 @@ function storage() {
     console.log(localStorage);
 }
 
-window.addEventListener('load',displayCocktail); 
 
-   function displayCocktail() {
-
-   var lastCocktail = JSON.parse(localStorage.getItem("cocktailStorage"));
-
-   if (lastCocktail !== null ) {
-      document.querySelector('#created-name').textContent;
-      document.querySelector('#cocktail-picture').children[0].src;
-      document.querySelector('#cocktail-instructions').children[0].textContent;
-      document.querySelector('#cocktail-ingredients').children[0].textContent;
-
-      var userCocktails = document.createElement('div');
-      cocktailDiv.classList.add('cocktail');
       
-      var nameElement = document.createElement('h2');
-      nameElement.textContent = cocktailName;
-
-      var pictureElement = document.createElement('img');
-      pictureElement.src = cocktailPicture;
-
-      var instructionsElement = document.createElement('p');
-      InstructionsElement.textContent = cocktailInstructions;
-
-      var ingredientsElement = document.createElement('p');
-      ingredientElement.textContent = cocktailIngredients;
-
-      cocktailDiv.appendChild(nameElement);
-      cocktailDiv.appendChild(pictureElement);
-      cocktailDiv.appendChild(instructionsElement);
-      cocktailDiv.appendChild(ingredientsElement);
-
-      userCocktails.appendChild(cocktailDiv);
-
-   } else {
-      return;
-   }
-
-   console.log("hello")
-
-   
-}
-
-
 
 
 
