@@ -65,10 +65,10 @@ addBtn.addEventListener('click', storage);
 function storage() {
 
      var cocktailStorage = {
-         name: document.querySelector('#created-name'),
-         image: document.querySelector('#cocktail-picture'),
-         recipe: document.querySelector('#cocktail-instructions'),
-         ingredients: document.querySelector('#cocktail-ingredients'),
+         name: document.querySelector('#created-name').textContent,
+         image: document.querySelector('#cocktail-picture').children[0].src,
+         recipe: document.querySelector('#cocktail-instructions').children[0].textContent,
+         ingredients: document.querySelector('#cocktail-ingredients').children[0].textContent,
      };
 
     localStorage.setItem("user", JSON.stringify(cocktailStorage));
