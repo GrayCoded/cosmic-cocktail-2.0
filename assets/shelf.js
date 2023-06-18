@@ -2,21 +2,21 @@ var storageBox = document.getElementById("#storage-box");
 var storedName = document.querySelector(".stored-name");
 var lastCocktail = JSON.parse(localStorage.getItem("user"));
 
-console.log(lastCocktail);
-console.log(lastCocktail);
+console.log(lastCocktail.name);
+console.log(lastCocktail.image);
+console.log(lastCocktail.recipe);
+console.log(lastCocktail.ingredients);
 
 //testing display on the line below - getting a result of object
 
-//this line pulls from the variable declared above
-document.querySelector("#storage-box").textContent = lastCocktail;
-
-//this line pulls all of the storage text under user in a string
-document.querySelector("#storage-box").textContent = localStorage.user;
+//Parsed Data lines for example
+document.querySelector(".stored-name").textContent = lastCocktail.name;
+document.querySelector(".stored-image").src = lastCocktail.image;
+document.querySelector(".stored-ingredients").textContent = lastCocktail.ingredients;
+document.querySelector(".stored-recipe").textContent = lastCocktail.recipe;
 
 
 function displayCocktail() {
-
-
  
     if (lastCocktail !== null ) {
        document.querySelector('#created-name').textContent = localStorage.lastCocktail;
