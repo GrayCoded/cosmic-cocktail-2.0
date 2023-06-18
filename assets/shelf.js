@@ -13,9 +13,8 @@ document.querySelector("#storage-box").textContent = lastCocktail;
 //this line pulls all of the storage text under user in a string
 document.querySelector("#storage-box").textContent = localStorage.user;
 
-
+//not sure we need a function
 function displayCocktail() {
-
  
     if (lastCocktail !== null ) {
        document.querySelector('#created-name').textContent = localStorage.lastCocktail;
