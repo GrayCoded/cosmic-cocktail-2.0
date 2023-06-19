@@ -66,8 +66,8 @@ body {
     border-radius: 10%;
     animation: pulse2 5s infinite, glowing 4s;
     padding-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 20px;
   }
 
@@ -149,6 +149,16 @@ body {
   90% { background-color: rgba(0, 15, 32, 0.55); }
 
   100% { background-color: rgba(13, 0, 32, 0.5); }
+}
+
+
+
+
+
+
+
+
+
 }
 
 
