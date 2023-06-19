@@ -1,0 +1,142 @@
+* {
+    cursor: url('images/spaceshuttle.png'), auto;
+    font-family: 'Orbitron', monospace, sans-serif;
+    color: azure;
+  }
+
+  body {
+    background-image: url("https://i.gifer.com/3QAe.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  #home {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 2vh;
+    margin-left: 2vw;
+    gap: 5vw;
+    margin-bottom: 1vh;
+  }
+
+  #home a {
+    transition: transform ease-in-out 0.5s
+  }
+
+#home a:hover {
+  transform: scale(1.3);
+}
+
+.title h1 {
+    text-shadow: 1px 3px rgb(203, 203, 56);
+  }
+  
+
+.loader-hidden {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    display: none;
+    margin-top: 0;
+    margin: 15%;
+  }
+
+  #rocketGif {
+    position: absolute;
+    width: 20%;
+    left: 500px;
+    margin: 10%;
+    rotate: 30deg;
+  }
+
+  #all-content-hider {
+    display: none;
+    border-radius: 10%;
+    animation: pulse2 5s infinite, glowing 4s;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+  }
+
+#cocktail-container:hover {
+  cursor: url('images/spaceshuttle2.png'), auto;
+}
+
+#created-name {
+  color: #e1ff00;
+  text-shadow: 1px 2px #8800ff;
+}
+
+.name-img {
+  border-radius: 20%;
+  margin: 5vh;
+  animation: pulse 2s infinite;
+}
+
+#cocktail-picture img {
+  border: solid #8800ff10;
+  border-radius: 20%;
+  padding: 5%;
+  background: #e1ff0020;
+}
+
+.ins-rec {
+  margin-top: 5%;
+}
+
+@keyframes glowing {
+  0% { box-shadow: inset 3000px 0 5px #fbff00; }
+  50% { box-shadow: inset 0 0 20px #e2ed6c; }
+  100% { box-shadow: inset 0 0 1px #fff; }
+}
+
+@keyframes pulse {
+  0% { outline: solid 50px #00ffea95; }
+
+  10% { outline: solid 48px #00ffe495; }
+
+  20% { outline: solid 46px #00ffdb95; }
+
+  30% { outline: solid 44px #00ffd295; }
+
+  40% { outline: solid 42px #00ffc895; }
+
+  50% { outline: solid 40px #00e5ff95; }
+
+  60% { outline: solid 42px #00ffc895; }
+
+  70% { outline: solid 44px #00ffd295; }
+
+  80% { outline: solid 46px #00ffdb95; }
+
+  90% { outline: solid 48px #00ffe495; }
+
+  100% { outline: solid 50px #00ffea95; }
+}
+
+@keyframes pulse2 {
+  0% { background-color: rgba(13, 0, 32, 0.5); }
+
+  10% { background-color: rgba(7, 0, 32, 0.55); }
+
+  20% {background-color: rgba(5, 0, 32, 0.6); }
+
+  30% { background-color: rgba(10, 0, 32, 0.65); }
+
+  40% { background-color: rgba(19, 0, 32, 0.7); }
+
+  50% { background-color: rgba(23, 0, 32, 0.75); }
+
+  60% { background-color: rgba(25, 0, 32, 0.7); }
+
+  70% { background-color: rgba(5, 0, 32, 0.65); }
+
+  80% { background-color: rgba(32, 0, 20, 0.6); }
+
+  90% { background-color: rgba(0, 15, 32, 0.55); }
+
+  100% { background-color: rgba(13, 0, 32, 0.5); }
+}
